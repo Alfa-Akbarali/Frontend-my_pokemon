@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+    text-decoration: none;
+}
+
+.cards_container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 2rem;
+    justify-content: center;
+    margin: 50px;
+    margin-top: 150px;
+    
+    .card {
+        width: 300px;
+        background-color: rgba(18, 119, 163, 0.656);
+        border-radius: 1rem;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+        transition: all 0.2s;
+        transition-property: transform;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+        transform: translateZ(0);
+    
+        a {
+            font-weight: 700;
+        }
+    }
+    .card:before {
+        pointer-events: none;
+        position: absolute;
+        z-index: -1;
+        content: "";
+        top: 100%;
+        left: 5%;
+        height: 15px;
+        width: 90%;
+        opacity: 0;
+        background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.45) 0%, rgba(201, 200, 200, 0) 80%);
+        transition-duration: 0.3s;
+        transition-property: transform, opacity;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+    
+    }
+    
+    .card:hover:before {
+        opacity: 1;
+        transform: translateY(5px);
+    }
+}
+body{
+    background-image: url(../assets/bg_image.jpg);
+    background-repeat: no-repeat, repeat;
+
+}
+.pokemon_card {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+
+    .pokemon_name {
+        color: white;
+        display: flex;
+        justify-content: center;
+        text-transform: capitalize;
+    }
+
+    .pokemon_id {
+        color: white;
+        display: flex;
+        justify-content: end;
+        font-weight: 300;
+    }
+
+    .pokemon_image {
+        filter: brightness(90%) contrast(140%);
+        image-rendering: auto;
+        width: 200px;
+        z-index: 2;
+    }
+    .middle_box{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        z-index: 2;
+        .bg_icon
+        {
+            right: 1px;
+            z-index: 0;
+            position: absolute;
+            width: 200px;
+            opacity: 0.3;
+            filter: brightness(90%) contrast(140%);
+            image-rendering: auto;
+        }
+    }
+    .card_name_type{
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        
+        .pokemon_type{
+            padding: 10px;
+            background-color: rgba(118, 118, 118, 0.464);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            color: white;
+            font-weight: 400;
+        }
+    }
+}
+
+.loading {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.797);
+    color: #ffd52d;
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 5s ease-in-out;
+}
+.pagination
+{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    column-gap: 50px;
+    justify-content: center;
+    color: white;
+}
+
+.pageButton {
+    background-color: #284b63;
+    color: #fff;
+    border: 2px solid #284b63;
+    padding: 15px 30px;
+    border-radius: 5px;
+    transition: border-color 0.5s ease;
+  }
+  
+  .pageButton:hover {
+    border-color: #fff;
+  }
+  
+  
+  
+  
